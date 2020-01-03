@@ -5,7 +5,7 @@ package headers
 //	include/uapi/asm-generic/ioctls.h
 //	include/uapi/drm/drm.h
 
-var IoctlLookup = map[int]string{
+var IoctlLookup = map[int64]string{
 	0x4B3A:     "KDSETMODE",
 	0x4B3B:     "KDGETMODE",
 	0x5309:     "CDROMEJECT",

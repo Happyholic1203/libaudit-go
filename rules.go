@@ -18,8 +18,8 @@ import (
 	"strings"
 	"syscall"
 
+	"github.com/Happyholic1203/libaudit-go/headers"
 	"github.com/lunixbochs/struc"
-	"github.com/mozilla/libaudit-go/headers"
 )
 
 // AuditRules describes a set of audit rules in JSON format

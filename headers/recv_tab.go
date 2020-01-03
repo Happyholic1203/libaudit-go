@@ -1,7 +1,7 @@
 package headers
 
 // Location: include/linux/socket.h
-var RecvLookUp = map[int]string{
+var RecvLookUp = map[int64]string{
 	0x00000001: "MSG_OOB",
 	0x00000002: "MSG_PEEK",
 	0x00000004: "MSG_DONTROUTE",

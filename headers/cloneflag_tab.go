@@ -1,7 +1,7 @@
 package headers
 
 // Location: include/uapi/linux/sched.h
-var CloneLookUp = map[int]string{
+var CloneLookUp = map[int64]string{
 	0x00000100: "CLONE_VM",
 	0x00000200: "CLONE_FS",
 	0x00000400: "CLONE_FILES",

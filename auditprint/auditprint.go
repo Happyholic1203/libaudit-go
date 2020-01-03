@@ -13,7 +13,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/mozilla/libaudit-go"
+	"github.com/Happyholic1203/libaudit-go"
 )
 
 func auditProc(e *libaudit.AuditEvent, err error) {

@@ -15,8 +15,8 @@ import (
 	"strings"
 	"syscall"
 
+	"github.com/Happyholic1203/libaudit-go/headers"
 	"github.com/lunixbochs/struc"
-	"github.com/mozilla/libaudit-go/headers"
 )
 
 // fieldType denotes the integer values of various fields occuring in audit messages
@@ -753,7 +753,7 @@ func printCloneFlags(fieldValue string) (string, error) {
 
 	var name string
 	for key, val := range headers.CloneLookUp {
-		if key&int(ival) > 0 {
+		if key&int64(ival) > 0 {
 			if len(name) > 0 {
 				name += "|"
 			}
@@ -1019,7 +1019,7 @@ func printUmount(fieldValue string) (string, error) {
 	}
 	var name string
 	for key, val := range headers.UmountLookUp {
-		if key&int(ival) > 0 {
+		if key&int64(ival) > 0 {
 			if len(name) > 0 {
 				name += "|"
 			}
@@ -1039,10 +1039,10 @@ func printIoctlReq(fieldValue string) (string, error) {
 		return "", err
 	}
 
-	if _, ok := headers.IoctlLookup[int(ival)]; !ok {
+	if _, ok := headers.IoctlLookup[int64(ival)]; !ok {
 		return fmt.Sprintf("0x%s", fieldValue), nil
 	}
-	return headers.IoctlLookup[int(ival)], nil
+	return headers.IoctlLookup[int64(ival)], nil
 }
 
 // TODO: add interpretation
@@ -1329,7 +1329,7 @@ func printRecv(fieldValue string) (string, error) {
 	}
 	var name string
 	for key, val := range headers.RecvLookUp {
-		if key&int(ival) > 0 {
+		if key&int64(ival) > 0 {
 			if len(name) > 0 {
 				name += "|"
 			}
